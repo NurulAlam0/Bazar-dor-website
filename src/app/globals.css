@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+@theme {
+  --font-sans: var(--font-hind-siliguri), ui-sans-serif, system-ui, sans-serif;
+  --color-bazar: #1f7a4d;
+  --color-bazar-dark: #145c38;
+  --color-bazar-ink: #163024;
+  --color-bazar-cream: #f6f1e6;
+  --color-bazar-sand: #efe6d4;
+  --color-ticker: #0f3d2c;
+}
+
+:root {
+  --accent: oklch(0.52 0.12 152);
+  --accent-foreground: oklch(0.99 0.01 95);
+  --background: oklch(0.97 0.015 95);
+  --foreground: oklch(0.28 0.04 150);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bazar-cream);
+  color: var(--color-bazar-ink);
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  animation: ticker-scroll 40s linear infinite;
+  width: max-content;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
